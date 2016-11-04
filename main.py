@@ -1,8 +1,8 @@
 from leads.test import leadMethods
 from mls.test import mlsMethods
+from partners.test import partnersMethods
 
 key = 'NDd@2a7om0nIoZdFKqjXxX'
-partnerKey = '';
 apiversion = '1.4.0'
 output = 'json'
 data = '';
@@ -15,4 +15,9 @@ headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":key, 
 #leadMethods(rootUrl, data, headers)
 
 #test MLS methods
-mlsMethods(rootUrl, data, headers)
+#mlsMethods(rootUrl, data, headers)
+
+#test Partners methods
+#parnter key
+#key = 'YLYsuwps-9kG0PyicpGsQZ'
+#partnersMethods(rootUrl, data, headers)
