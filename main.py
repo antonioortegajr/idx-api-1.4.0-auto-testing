@@ -1,5 +1,6 @@
 from leads.test import leadMethods
 from mls.test import mlsMethods
+from clients.test import clientsMethods
 from partners.test import partnersMethods
 
 key = 'NDd@2a7om0nIoZdFKqjXxX'
@@ -16,6 +17,9 @@ headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":key, 
 
 #test MLS methods
 #mlsMethods(rootUrl, data, headers)
+
+#test MLS Clientsw
+clientsMethods(rootUrl, data, headers)
 
 #test Partners methods
 #parnter key

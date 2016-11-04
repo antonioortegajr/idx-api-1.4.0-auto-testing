@@ -27,11 +27,11 @@ def leadMethods(rootUrl, data, headers):
     email = addOn + 'kim.bau.bau.kim@gmail.com'
     data = {'firstName' : firstName, 'lastName' : lastName, 'email' : email}
 
-    #Read
+    #Read Leads
     method ='GET'
     main(url, headers, method, data)
 
-    #Create
+    #Create Lead
     method ='PUT'
     newLeadID = ''
     newLeadReturn = main(url, headers, method, data)
@@ -48,7 +48,7 @@ def leadMethods(rootUrl, data, headers):
         createdLead = str(newLeadID['newID'])
         print createdLead
 
-        #Update
+        #Update Lead
         method = 'POST'
         url = url + '/' + createdLead
         newLastName = lastName + 'testForPostUpdate'
@@ -57,6 +57,69 @@ def leadMethods(rootUrl, data, headers):
         print updateLeadReturn
 
         #before we delete the lead, lets check other endpoints that use a lead ID
+        #check Search
+        url = rootUrl + componant + '/search/' + createdLead
+        method ='PUT'
+        newSearchID = ''
+        data = {'searchName' : 'testSearch', 'search': {'idxID':'a001','hp': 200000}}
+        newSearchReturn = main(url, headers, method, data)
+
+        #check for an error
+        if (newSearchReturn == 'ERROR'):
+            print 'There was an ERROR. Check the errors.txt file'
+        else:
+            #now that we have a Search ID check create and update
+            newSearchID = json.loads(newSearchReturn)
+            createdProperty = str(newSearchID['newID'])
+            print createdSearch
+
+            #Update
+            method = 'POST'
+            url = url + '/' + createdSearch
+            newSearchName = 'new updated Search'
+            data = {'searchName' : newSearchName}
+            updateSearchReturn = main(url, headers, method, data)
+            print updateSearchReturn
+
+            #Delete
+            url = url
+            method = 'DELETE'
+            deleteSearchReturn = main(url, headers, method, data)
+            print deleteSearchReturn
+
+
+
+        #check Property
+        url = rootUrl + componant + '/property/' + createdLead
+        method ='PUT'
+        newPropertyID = ''
+        data = {'propertyName' : 'testprop', 'property': {'idxID':'a001','listingID': 345678}}
+        newPropertyReturn = main(url, headers, method, data)
+
+        #check for an error
+        if (newPropertyReturn == 'ERROR'):
+            print 'There was an ERROR. Check the errors.txt file'
+        else:
+            #now that we have a lead ID check create and update
+            newPropertyID = json.loads(newPropertyReturn)
+            createdProperty = str(newPropertyID['newID'])
+            print createdProperty
+
+            #Update
+            method = 'POST'
+            url = url + '/' + createdProperty
+            newPropertyName = 'new updated Property'
+            data = {'propertyName' : newPropertyName}
+            updatePropertyReturn = main(url, headers, method, data)
+            print updatePropertyReturn
+
+            #Delete
+            url = url
+            method = 'DELETE'
+            deletePropertyReturn = main(url, headers, method, data)
+            print deletePropertyReturn
+
+
         #check notes
         url = rootUrl + componant + '/note/' + createdLead
         method ='PUT'
@@ -68,7 +131,7 @@ def leadMethods(rootUrl, data, headers):
         if (newNoteReturn == 'ERROR'):
             print 'There was an ERROR. Check the errors.txt file'
         else:
-            #now that we have a lead ID check create and update
+            #now that we have a note ID check create and update
             newNoteID = json.loads(newNoteReturn)
             createdNote = str(newNoteID['newID'])
             print createdNote
