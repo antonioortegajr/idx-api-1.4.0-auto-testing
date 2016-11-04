@@ -18,8 +18,6 @@ def leadMethods(rootUrl, data, headers):
     url = rootUrl + componant + endPoint
     listmethods = main(url, headers, method, data)
 
-
-
     #test lead methods
     endPoint = '/lead'
     url = rootUrl + componant + endPoint
