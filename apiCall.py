@@ -11,6 +11,7 @@ def main(url, headers, method, data):
   #check to see if this is not a Read only call, oh yeah no swith in python
   if (method != 'GET'):
       if (method == 'PUT'):
+          print params
           r = requests.put(url, data = params, headers=headers)
 
       if (method == 'POST'):
@@ -45,7 +46,7 @@ def main(url, headers, method, data):
           errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
   else:
       #log the errors in a text file
-      errorLog.write('Error found with: ' + url + 'method: ' + method + ' http code: ' + httpStatusCode + response + '\n')
+      errorLog.write('Error found with: ' + url + ' method: ' + method + ' http code: ' + httpStatusCode + response + '\n')
       response = 'ERROR'
 
   print r.headers
