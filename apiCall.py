@@ -45,7 +45,7 @@ def main(url, headers, method, data):
           errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
   else:
       #log the errors in a text file
-      errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + response + '\n')
+      errorLog.write('Error found with: ' + url + 'method: ' + method + ' http code: ' + httpStatusCode + response + '\n')
       response = 'ERROR'
 
   print r.headers
