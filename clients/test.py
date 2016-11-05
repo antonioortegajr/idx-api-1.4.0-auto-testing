@@ -14,92 +14,92 @@ def clientsMethods(rootUrl, data, headers):
     endPoint = '/listmethods'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    listmethods = main(url, headers, method, data)
 
     #test agents
     endPoint = '/agents'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    agents = main(url, headers, method, data)
 
     #test offices
     endPoint = '/offices'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    offices = main(url, headers, method, data)
 
     #test systemlinks
     endPoint = '/systemlinks'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    systemlinks = main(url, headers, method, data)
 
     #test widgetsrc
     endPoint = '/widgetsrc'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    widgetsrc = main(url, headers, method, data)
 
     #test featured
     endPoint = '/featured'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    featured = main(url, headers, method, data)
 
     #test featured
     endPoint = '/soldpending'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    soldpending = main(url, headers, method, data)
 
     #test supplemental
     endPoint = '/supplemental'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    supplemental = main(url, headers, method, data)
 
     #test cities
-    endPoint = '/cities '
+    endPoint = '/cities'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    cities = main(url, headers, method, data)
 
     #test citieslistname
     endPoint = '/citieslistname'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    citieslistname = main(url, headers, method, data)
 
     #test counties
     endPoint = '/counties'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    counties = main(url, headers, method, data)
 
-    #test counties
+    #test zipcodes
     endPoint = '/zipcodes'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    zipcodes = main(url, headers, method, data)
 
     #test accounttype
     endPoint = '/accounttype'
     url = rootUrl + componant + endPoint
     method = 'GET'
-    listcomponents = main(url, headers, method, data)
+    accounttype = main(url, headers, method, data)
 
     #test wrappercache
     endPoint = '/wrappercache'
     url = rootUrl + componant + endPoint
     method = 'DELETE'
-    listcomponents = main(url, headers, method, data)
+    wrappercache = main(url, headers, method, data)
 
     #Create SavedSearch
     endPoint = '/savedlinks'
     url = rootUrl + componant + endPoint
     method ='PUT'
     newSearchID = ''
-    data = {'linkName':'Good_side_of_tracks', 'pageTitle':'Good_side_of_tracks','linkTitle':'Good_side_of_tracks','queryString':{'idxID':'a001','hp':200000}}
+    data = 'linkName=Auto_testing&pageTitle=Auto_testing&linkTitle=Auto_testing&queryString%5BidxID%5D=a001&queryString%5Bhp%5D=200000'
     newSearchReturn = main(url, headers, method, data)
     #sample return {"newID":39}
     print newSearchReturn
@@ -118,7 +118,7 @@ def clientsMethods(rootUrl, data, headers):
         method = 'POST'
         url = url + '/' + createdSearch
         newSearchName = 'new search'
-        data = {'linkName':newSearchName}
+        data = 'linkName=newTempSearchName'
         updateSearchReturn = main(url, headers, method, data)
         print updateSearchReturn
 
