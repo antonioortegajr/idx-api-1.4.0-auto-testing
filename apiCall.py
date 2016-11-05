@@ -8,8 +8,17 @@ import sys
 #this is a call to base API calls off of.
 def main(url, headers, method, data):
 
-  #params = urllib.urlencode(data)
   params = data
+  response = '';
+
+  #retrun a true or false for valid or non valid json
+  def is_json(response):
+      try:
+          json_object = json.loads(response)
+          print '... valid json'
+      except ValueError, e:
+          print '... INVALD JSON'
+          errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' JSON INVALID ' + '\n')
 
   #check to see if this is not a Read only call, oh yeah no swith in python
   if (method != 'GET'):
@@ -42,30 +51,21 @@ def main(url, headers, method, data):
 
   #check that 200 and 204 have the correct string legnth
   if (r.status_code < 300):
-
-      #retrun a true or false for valid or non valid json
-      def is_json(response):
-          try:
-              json_object = json.loads(response)
-          except ValueError, e:
-              print '... INVALD JSON'
-              errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' JSON INVALID ' + '\n')
-          print '... valid json'
-
       #no switch in python. Meh.
       if(r.status_code == 204 and responseLenth > 0):
           print '... ERROR 204 http response non empty return body. Should return 200...'
           errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
       if (r.status_code == 200 and responseLenth == 0):
           print '... ERROR 200 http response with an empty return body. Should return 204...'
-          is_json(response)
           errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
   else:
       #log the errors in a text file
       errorLog.write('Error found with: ' + url + ' method: ' + method + ' http code: ' + httpStatusCode + response + '\n')
       response = 'ERROR'
 
-  print r.headers
+  #print r.headers
   is_json(response)
   return response
+
+  #done testing this endpoint
   print '... END Testing '+method+' for '+url+' ...'
