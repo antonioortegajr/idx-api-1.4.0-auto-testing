@@ -5,7 +5,7 @@ import requests
 import json
 import sys
 
-#this is a sample call to base API calls off of.
+#this is a call to base API calls off of.
 def main(url, headers, method, data):
 
   #params = urllib.urlencode(data)
@@ -30,14 +30,15 @@ def main(url, headers, method, data):
   httpStatusCode = str(r.status_code)
   print "status: " + httpStatusCode
 
-  #exit if the API call limit is reached
+  #Just exit if the API call limit is reached
   if(r.status_code == 412):
       print '... ERROR 412 stopping test'
       errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Stopping test OVER API CALL LIMITS ' + '\n')
       sys.exit()
 
-  #log the error
+  #open a file to log any errors
   errorLog = open('errors.txt','a')
+  errorLog.write('This is an error log. API Key used: ' + key + ' Version: ' + apiversion + '\n')
   responseLenth = len(response)
 
   #check that 200 and 204 have the correct string legnth
