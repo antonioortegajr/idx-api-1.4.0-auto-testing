@@ -38,7 +38,6 @@ def main(url, headers, method, data):
 
   #open a file to log any errors
   errorLog = open('errors.txt','a')
-  errorLog.write('This is an error log. API Key used: ' + key + ' Version: ' + apiversion + '\n')
   responseLenth = len(response)
 
   #check that 200 and 204 have the correct string legnth
