@@ -61,7 +61,7 @@ def leadMethods(rootUrl, data, headers):
         url = rootUrl + componant + '/search/' + createdLead
         method ='PUT'
         newSearchID = ''
-        data = {'searchName' : 'testSearch', 'search': {'idxID':'a001','hp': 200000}}
+        data = 'searchName=Good_side_of_tracks&search%5BidxID%5D=a001&search%5Bhp%5D=200000'
         newSearchReturn = main(url, headers, method, data)
 
         #check for an error
@@ -77,7 +77,7 @@ def leadMethods(rootUrl, data, headers):
             method = 'POST'
             url = url + '/' + createdSearch
             newSearchName = 'new updated Search'
-            data = {'searchName' : newSearchName}
+            data = ''searchName=testNameChange'
             updateSearchReturn = main(url, headers, method, data)
             print updateSearchReturn
 
