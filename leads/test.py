@@ -56,7 +56,7 @@ def leadMethods(rootUrl, data, headers):
         updateLeadReturn = main(url, headers, method, data)
         print updateLeadReturn
 
-        #before we delete the lead, lets check other endpoints that use a lead ID
+        #before we delete the lead, lets check other endpoints that use this lead ID
         #check Search
         url = rootUrl + componant + '/search/' + createdLead
         method ='PUT'
@@ -70,14 +70,14 @@ def leadMethods(rootUrl, data, headers):
         else:
             #now that we have a Search ID check create and update
             newSearchID = json.loads(newSearchReturn)
-            createdProperty = str(newSearchID['newID'])
+            createdSearch = str(newSearchID['newID'])
             print createdSearch
 
             #Update
             method = 'POST'
             url = url + '/' + createdSearch
             newSearchName = 'new updated Search'
-            data = ''searchName=testNameChange'
+            data = 'searchName=testNameChange'
             updateSearchReturn = main(url, headers, method, data)
             print updateSearchReturn
 
@@ -87,13 +87,11 @@ def leadMethods(rootUrl, data, headers):
             deleteSearchReturn = main(url, headers, method, data)
             print deleteSearchReturn
 
-
-
         #check Property
         url = rootUrl + componant + '/property/' + createdLead
         method ='PUT'
         newPropertyID = ''
-        data = {'propertyName' : 'testprop', 'property': {'idxID':'a001','listingID': 345678}}
+        data = 'propertyName=ruins&property%5BidxID%5D=a001&property%5BlistingID%5D=345678'
         newPropertyReturn = main(url, headers, method, data)
 
         #check for an error
@@ -109,7 +107,7 @@ def leadMethods(rootUrl, data, headers):
             method = 'POST'
             url = url + '/' + createdProperty
             newPropertyName = 'new updated Property'
-            data = {'propertyName' : newPropertyName}
+            data = 'propertyName=newProperynameTest'
             updatePropertyReturn = main(url, headers, method, data)
             print updatePropertyReturn
 
