@@ -3,25 +3,29 @@ from mls.test import mlsMethods
 from clients.test import clientsMethods
 from partners.test import partnersMethods
 
-key = 'NDd@2a7om0nIoZdFKqjXxX'
-apiversion = '1.4.0'
+#only json works
 output = 'json'
-data = '';
+key = 'yourKey'
+apiversion = '1.4.0'
 
 #default domain and headers
 rootUrl = 'https://api.idxbroker.com'
 headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":key, "apiversion":apiversion, "outputtype":output}
+data = '';
 
-#test Leads methods
-#leadMethods(rootUrl, data, headers)
+#test Leads methods and clear data variable after
+leadMethods(rootUrl, data, headers)
+data = '';
 
 #test MLS methods
-#mlsMethods(rootUrl, data, headers)
+mlsMethods(rootUrl, data, headers)
+data = '';
 
-#test MLS Clientsw
+#test MLS Client
 clientsMethods(rootUrl, data, headers)
+data = '';
 
 #test Partners methods
 #parnter key
-#key = 'YLYsuwps-9kG0PyicpGsQZ'
-#partnersMethods(rootUrl, data, headers)
+key = 'yourKey'
+partnersMethods(rootUrl, data, headers)
