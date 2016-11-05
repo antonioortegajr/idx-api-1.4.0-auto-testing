@@ -14,7 +14,7 @@ def partnersMethods(rootUrl, data, headers):
     url = rootUrl + componant + endPoint
     method = 'GET'
     listcomponents = main(url, headers, method, data)
-    
+
     #test clients
     endPoint = '/clients'
     url = rootUrl + componant + endPoint
