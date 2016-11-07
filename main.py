@@ -5,9 +5,9 @@ from partners.test import partnersMethods
 
 #only json works
 output = 'json'
-key = 'NDd@2a7om0nIoZdFKqjXxX'
+key = 'yourKey'
 #parnter key
-partnerKey = 'YLYsuwps-9kG0PyicpGsQZ'
+partnerKey = 'yourKey'
 apiversion = '1.4.0'
 
 #default domain and headers
