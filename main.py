@@ -5,7 +5,9 @@ from partners.test import partnersMethods
 
 #only json works
 output = 'json'
-key = 'yourKey'
+key = 'NDd@2a7om0nIoZdFKqjXxX'
+#parnter key
+partnerKey = 'YLYsuwps-9kG0PyicpGsQZ'
 apiversion = '1.4.0'
 
 #default domain and headers
@@ -26,6 +28,5 @@ clientsMethods(rootUrl, data, headers)
 data = '';
 
 #test Partners methods
-#parnter key
-key = 'yourKey'
+headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":partnerKey, "apiversion":apiversion, "outputtype":output}
 partnersMethods(rootUrl, data, headers)

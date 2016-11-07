@@ -58,14 +58,15 @@ def main(url, headers, method, data):
       if (r.status_code == 200 and responseLenth == 0):
           print '... ERROR 200 http response with an empty return body. Should return 204...'
           errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
+      elif (r.status_code == 200):
+          is_json(response)
+          return response
   else:
       #log the errors in a text file
       errorLog.write('Error found with: ' + url + ' method: ' + method + ' http code: ' + httpStatusCode + response + '\n')
       response = 'ERROR'
 
-  #print r.headers
-  is_json(response)
-  return response
+
 
   #done testing this endpoint
   print '... END Testing '+method+' for '+url+' ...'

@@ -9,13 +9,11 @@ def mlsMethods(rootUrl, data, headers):
     url = rootUrl + componant + endPoint
     method = 'GET'
     listcomponents = main(url, headers, method, data)
-    print listcomponents
 
     #test listmethods
     endPoint = '/listmethods'
     url = rootUrl + componant + endPoint
     listmethods = main(url, headers, method, data)
-    print listmethods
 
     #test approvedmls
     endPoint = '/approvedmls'
