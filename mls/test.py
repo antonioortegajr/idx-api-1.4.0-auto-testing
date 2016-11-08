@@ -60,7 +60,7 @@ def mlsMethods(rootUrl, data, headers):
     propertytypes = main(url, headers, method, data)
 
     #test propertycount
-    endPoint = '/propertycount/' + mlsID
+    endPoint = '/propertycount/' + mlsID +'?countType=city&countSpecifier=37536'
     url = rootUrl + componant + endPoint
     propertycount = main(url, headers, method, data)
 

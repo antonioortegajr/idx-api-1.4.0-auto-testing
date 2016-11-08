@@ -22,7 +22,7 @@ def partnersMethods(rootUrl, data, headers):
     listcomponents = main(url, headers, method, data)
 
     #test propertytypes
-    endPoint = '/propertytypes/'
+    endPoint = '/propertytypes'
     url = rootUrl + componant + endPoint
     method = 'GET'
     listcomponents = main(url, headers, method, data)

@@ -42,7 +42,7 @@ def main(url, headers, method, data):
   #Just exit if the API call limit is reached
   if(r.status_code == 412):
       print '... ERROR 412 stopping test'
-      errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Stopping test OVER API CALL LIMITS ' + '\n')
+      errorLog.write('Error found with : ' + url + ' http code: ' + httpStatusCode + ' Stopping test OVER API CALL LIMITS ' + '\n')
       sys.exit()
 
   #open a file to log any errors
@@ -54,19 +54,15 @@ def main(url, headers, method, data):
       #no switch in python. Meh.
       if(r.status_code == 204 and responseLenth > 0):
           print '... ERROR 204 http response non empty return body. Should return 200...'
-          errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
+          errorLog.write('Error found with: ' + method + ' for ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
       if (r.status_code == 200 and responseLenth == 0):
           print '... ERROR 200 http response with an empty return body. Should return 204...'
-          errorLog.write('Error found with: ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
+          errorLog.write('Error found with: ' + method + ' for ' + url + ' http code: ' + httpStatusCode + ' Return body does not match status code' + response + '\n')
       elif (r.status_code == 200):
           is_json(response)
           return response
+
   else:
       #log the errors in a text file
-      errorLog.write('Error found with: ' + url + ' method: ' + method + ' http code: ' + httpStatusCode + response + '\n')
+      errorLog.write('Error found with: ' + method + ' for ' + url + ' http code: ' + httpStatusCode + response + '\n')
       response = 'ERROR'
-
-
-
-  #done testing this endpoint
-  print '... END Testing '+method+' for '+url+' ...'
