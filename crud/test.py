@@ -9,25 +9,9 @@ def crudMethods(rootUrl, data, headers):
     url = rootUrl + componant + endPoint
     add = "q"
     add = add + 'w'
-    firstName = addOn + 'Bau'
-    lastName = addOn + 'kim'
-    email = addOn + 'kim.bau.bau.kim@gmail.com'
-    email2 = addOn + 'kim.bau.bau2.kim@gmail.com'
-    password = 'password'
-    address ='123 fake'
-    city = 'fake'
-    stateProvince = 'OR'
-    country = 'usa'
-    zipCode = 'HTML' #HTML or Plain Text
-    disabled = 'n' #y or n
-    canLogin = 'y' #y or n
-    receiveUpdates = 'y' #y or n
-    flag = 'y' #y or n
-    phone = '1234567890'
-    agentOwner = '1'
 
-
-    data = {'firstName' : firstName, 'lastName' : lastName, 'email' : email, 'email2': addOn, 'password': password, 'address': address, 'city': city, 'stateProvince': stateProvince, 'country': country, 'zipCode': zipCode, 'disabled': disabled, disabled, 'canLogin': canLogin, 'receiveUpdates': receiveUpdates, 'flag': flag, 'phone': phone, 'agentOwner': agentOwner}
+    #use all available parametors
+    data = 'firstName=Bau&lastName=kim&email=kim.bau.bau.kim%40gmail.com&email2=kim.bau.bau2.kim%40gmail.com&password=password&address=123+fake&city=fake&stateProvince=OR&country=usa&zipCode=HTML&disabled=n&canLogin=y&receiveUpdates=y&flag=y&phone=1234567890&agentOwner=1'
 
     #Create Lead
     method ='PUT'
@@ -58,30 +42,8 @@ def crudMethods(rootUrl, data, headers):
         url = url + '/' + createdLead
 
         #test lead methods
-        endPoint = '/lead'
-        url = rootUrl + componant + endPoint
-        add = "q222"
-        add = add + 'w222'
-        firstName = addOn + 'Bau'
-        lastName = addOn + 'kim'
-        email = addOn + 'kim.bau.bau.kim@gmail.com'
-        email2 = addOn + 'kim.bau.bau2222.kim@gmail.com'
-        password = 'changeme'
-        address ='1234567 fake'
-        city = 'fakesss'
-        stateProvince = 'Ro'
-        country = 'ussr'
-        zipCode = 'Plain Text' #HTML or Plain Text
-        disabled = 'y' #y or n
-        canLogin = 'n' #y or n
-        receiveUpdates = 'n' #y or n
-        flag = 'n' #y or n
-        phone = '0987654321'
-        agentOwner = '1'
 
-
-        data = {'firstName' : firstName, 'lastName' : lastName, 'email' : email, 'email2': addOn, 'password': password, 'address': address, 'city': city, 'stateProvince': stateProvince, 'country': country, 'zipCode': zipCode, 'disabled': disabled, disabled, 'canLogin': canLogin, 'receiveUpdates': receiveUpdates, 'flag': flag, 'phone': phone, 'agentOwner': agentOwner}
-
+        data = 'firstName=Bau2&lastName=kim2&email=kim.bau.bau.kim2%40gmail.com&email2=kim.bau.bau2.kim2%40gmail.com&password=password2&address=1232+fake&city=fake2&stateProvince=OR2&country=usa2&zipCode=22222&disabled=y&canLogin=n&receiveUpdates=n&flag=7&phone=222222220&agentOwner=0'
         updateLeadReturn = main(url, headers, method, data)
 
         #Delete
@@ -100,8 +62,8 @@ key = 'Wb6IHM-GT71Htdd-7rvN-_'
 #rootUrl = 'https://api.idxbroker.com'
 rootUrl = 'https://api.idxsandbox.com'
 
-#versions = ['1.0.4', '1.1.1', '1.2.0', '1.2.1', '1.2.2', '1.2.0', '1.3.0', '1.4.0']
-versions = ['1.4.0']
+versions = ['1.0.4', '1.1.1', '1.2.0', '1.2.1', '1.2.2', '1.2.0', '1.3.0', '1.4.0']
+#versions = ['1.4.0']
 
 
 data = '';

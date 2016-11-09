@@ -20,19 +20,19 @@ headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":key, 
 data = '';
 
 #test Leads methods and clear data variable after
-#leadMethods(rootUrl, data, headers)
+leadMethods(rootUrl, data, headers)
 data = '';
 
 #test MLS methods
-#mlsMethods(rootUrl, data, headers)
+mlsMethods(rootUrl, data, headers)
 data = '';
 
 #test MLS Client
-#clientsMethods(rootUrl, data, headers)
+clientsMethods(rootUrl, data, headers)
 data = '';
 
 #test Partners methods
 #headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":partnerKey, "apiversion":apiversion, "outputtype":output}
 #partnersMethods(rootUrl, data, headers)
 
-crudMethods(rootUrl, data, headers)
+#crudMethods(rootUrl, data, headers)
