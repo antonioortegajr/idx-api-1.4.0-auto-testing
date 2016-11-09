@@ -17,22 +17,21 @@ apiversion = '1.4.0'
 rootUrl = 'https://api.idxsandbox.com'
 
 headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":key, "apiversion":apiversion, "outputtype":output}
-data = '';
+data = ''
+crudMethods(rootUrl, data, headers)
 
 #test Leads methods and clear data variable after
-leadMethods(rootUrl, data, headers)
-data = '';
+#leadMethods(rootUrl, data, headers)
+data = ''
 
 #test MLS methods
-mlsMethods(rootUrl, data, headers)
-data = '';
+#mlsMethods(rootUrl, data, headers)
+data = ''
 
 #test MLS Client
-clientsMethods(rootUrl, data, headers)
-data = '';
+#clientsMethods(rootUrl, data, headers)
+data = ''
 
 #test Partners methods
 #headers = {"Content-Type":"application/x-www-form-urlencoded", "accesskey":partnerKey, "apiversion":apiversion, "outputtype":output}
 #partnersMethods(rootUrl, data, headers)
-
-#crudMethods(rootUrl, data, headers)

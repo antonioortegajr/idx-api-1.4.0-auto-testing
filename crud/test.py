@@ -7,11 +7,11 @@ def crudMethods(rootUrl, data, headers):
     #test lead methods
     endPoint = '/lead'
     url = rootUrl + componant + endPoint
-    add = "q"
-    add = add + 'w'
+    add = "2"
+    add = add + '2'
 
     #use all available parametors
-    data = 'firstName=Bau&lastName=kim&email=kim.bau.bau.kim%40gmail.com&email2=kim.bau.bau2.kim%40gmail.com&password=password&address=123+fake&city=fake&stateProvince=OR&country=usa&zipCode=HTML&disabled=n&canLogin=y&receiveUpdates=y&flag=y&phone=1234567890&agentOwner=1'
+    data = 'email2=kim.bau.bau'+add+'.kim%40gmail.com&password=password&address=123+fake&city=fake&stateProvince=OR&country=usa&zipCode=HTML&disabled=n&canLogin=y&receiveUpdates=y&flag=y&phone=1234567890&agentOwner=1&firstName=Bau'+add+'&lastName=kim'+add+'&email=kim.bau.bau.kim'+add+'%40gmail.com'
 
     #Create Lead
     method ='PUT'
@@ -44,6 +44,7 @@ def crudMethods(rootUrl, data, headers):
         #test lead methods
 
         data = 'firstName=Bau2&lastName=kim2&email=kim.bau.bau.kim2%40gmail.com&email2=kim.bau.bau2.kim2%40gmail.com&password=password2&address=1232+fake&city=fake2&stateProvince=OR2&country=usa2&zipCode=22222&disabled=y&canLogin=n&receiveUpdates=n&flag=7&phone=222222220&agentOwner=0'
+
         updateLeadReturn = main(url, headers, method, data)
 
         #Delete
@@ -62,7 +63,7 @@ key = 'Wb6IHM-GT71Htdd-7rvN-_'
 #rootUrl = 'https://api.idxbroker.com'
 rootUrl = 'https://api.idxsandbox.com'
 
-versions = ['1.0.4', '1.1.1', '1.2.0', '1.2.1', '1.2.2', '1.2.0', '1.3.0', '1.4.0']
+versions = ['1.4.0', '1.3.0', '1.2.0', '1.2.2', '1.2.1', '1.2.0', '1.1.1', '1.0.4']
 #versions = ['1.4.0']
 
 
