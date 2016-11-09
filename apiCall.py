@@ -23,13 +23,13 @@ def main(url, headers, method, data):
   #check to see if this is not a Read only call, oh yeah no swith in python
   if (method != 'GET'):
       if (method == 'PUT'):
-          r = requests.put(url, data = params, headers=headers)
+          r = requests.put(url, data = params, headers=headers, verify=False)
       if (method == 'POST'):
-          r = requests.post(url, data = params, headers=headers)
+          r = requests.post(url, data = params, headers=headers, verify=False)
       if (method == 'DELETE'):
-          r = requests.delete(url, data = params, headers=headers)
+          r = requests.delete(url, data = params, headers=headers, verify=False)
   else:
-      r = requests.get(url, data = params, headers=headers)
+      r = requests.get(url, data = params, headers=headers, verify=False)
 
   #print the endpoint to be tested
   print '... START Testing ' + method + ' for ' + url + ' ...'
