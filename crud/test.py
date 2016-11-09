@@ -11,7 +11,9 @@ def crudMethods(rootUrl, data, headers):
     add = add + '2'
 
     #use all available parametors
-    data = 'email2=kim.bau.bau'+add+'.kim%40gmail.com&password=password&address=123+fake&city=fake&stateProvince=OR&country=usa&zipCode=HTML&disabled=n&canLogin=y&receiveUpdates=y&flag=y&phone=1234567890&agentOwner=1&firstName=Bau'+add+'&lastName=kim'+add+'&email=kim.bau.bau.kim'+add+'%40gmail.com'
+    #data = 'email2=kim.bau.bau'+add+'.kim%40gmail.com&password=password&address=123+fake&city=fake&stateProvince=OR&country=usa&zipCode=HTML&disabled=n&canLogin=y&receiveUpdates=y&flag=y&phone=1234567890&agentOwner=1&firstName=Bau'+add+'&lastName=kim'+add+'&email=kim.bau.bau.kim'+add+'%40gmail.com'
+
+    data = 'firstName=Bau'+add+'&lastName=kim'+add+'&email=kim.bau.bau.kim'+add+'%40gmail.com'
 
     #Create Lead
     method ='PUT'
