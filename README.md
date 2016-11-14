@@ -31,3 +31,7 @@ Required:
 * valid IDX Broker API key
 * valid IDX Broker Partner key
 * use of only a001 for now
+
+In progress:
+Add test for CRUD methods specifically for Leads
+Add test to test all additional parameters.
